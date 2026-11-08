@@ -1,0 +1,6 @@
+<resources>
+    <!-- LSPosed / Xposed：模块作用域 -->
+    <string-array name="xposed_scope">
+        <item>com.netease.x19</item>
+    </string-array>
+</resources>

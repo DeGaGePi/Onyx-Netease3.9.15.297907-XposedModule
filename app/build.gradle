@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.onyx.clickgui'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.onyx.mc"
+        minSdk 24
+        targetSdk 34
+        versionCode 61
+        versionName "2.4.14"
+
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 纯 Java 工程，不用 androidx —— 保证完全离线可编
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false          // release 变体不做 lintVital —— 离线环境拉不到 lint-gradle
+    }
+}
+
+dependencies {
+    // Xposed API 只参与编译，绝不打进 dex（运行期由框架提供真身）
+    compileOnly files('libs/api-82.jar')
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OnyxClickGUI">
+
+        <!-- ═══════════ Xposed 模块声明 ═══════════ -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Onyx —— 网易版《我的世界》客户端模块（ClickGUI / Kill Aura）" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+        <!-- ★ 用**字面量**，不用 @array 资源引用：
+             资源引用形式在部分 LSPosed 版本上解析不到，模块作用域会变成空的 →
+             表现为"模块已启用但完全不注入"，UI 自然一点都看不到。
+             SiyoX-1.0.3 用的就是字面量。 -->
+        <meta-data
+            android:name="xposedscope"
+            android:value="com.netease.x19" />
+
+        <!-- 模块自己的壳 Activity：看状态、单独预览 GUI -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+            android:theme="@style/Theme.OnyxClickGUI">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
