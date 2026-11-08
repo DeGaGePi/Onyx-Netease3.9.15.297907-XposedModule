@@ -5,15 +5,15 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Set;
 
-/**
- * 编译期占位：运行期由框架提供真身。
- * 这里只保留模块实际会用到的 API 面，方法体全部为空实现。
- */
+ 
+
+
+
 public final class XposedHelpers {
 
     private XposedHelpers() {}
 
-    // ───────────────────────── 类 ─────────────────────────
+    
 
     public static Class<?> findClass(String className, ClassLoader classLoader) {
         return null;
@@ -23,7 +23,7 @@ public final class XposedHelpers {
         return null;
     }
 
-    // ───────────────────────── 方法 ─────────────────────────
+    
 
     public static Method findMethodExact(Class<?> clazz, String methodName, Object... parameterTypes) {
         return null;
@@ -49,7 +49,7 @@ public final class XposedHelpers {
         return null;
     }
 
-    // ───────────────────────── 构造 ─────────────────────────
+    
 
     public static Constructor<?> findConstructorExact(Class<?> clazz, Object... parameterTypes) {
         return null;
@@ -60,7 +60,7 @@ public final class XposedHelpers {
         return null;
     }
 
-    // ───────────────────────── Hook ─────────────────────────
+    
 
     public static XC_MethodHook.Unhook findAndHookMethod(Class<?> clazz, String methodName,
                                                          Object... parameterTypesAndCallback) {
@@ -78,7 +78,7 @@ public final class XposedHelpers {
         return null;
     }
 
-    // ───────────────────────── 字段 ─────────────────────────
+    
 
     public static Field findField(Class<?> clazz, String fieldName) { return null; }
 
@@ -124,7 +124,7 @@ public final class XposedHelpers {
 
     public static void setDoubleField(Object obj, String fieldName, double value) {}
 
-    // ───────────────────────── 静态字段 ─────────────────────────
+    
 
     public static Object getStaticObjectField(Class<?> clazz, String fieldName) { return null; }
 
@@ -146,7 +146,7 @@ public final class XposedHelpers {
 
     public static void setStaticFloatField(Class<?> clazz, String fieldName, float value) {}
 
-    // ───────────────────────── 调用 ─────────────────────────
+    
 
     public static Object callMethod(Object obj, String methodName, Object... args) { return null; }
 

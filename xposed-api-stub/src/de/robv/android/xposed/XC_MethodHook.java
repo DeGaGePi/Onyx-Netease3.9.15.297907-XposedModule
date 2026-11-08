@@ -3,9 +3,9 @@ package de.robv.android.xposed;
 import java.lang.reflect.Member;
 import java.util.Set;
 
-/**
- * 编译期占位：运行期由框架提供真身。
- */
+ 
+
+
 public abstract class XC_MethodHook implements Comparable<XC_MethodHook> {
 
     public static final int PRIORITY_HIGHEST = 10000;

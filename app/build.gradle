@@ -28,7 +28,7 @@ android {
         }
     }
 
-    // 纯 Java 工程，不用 androidx —— 保证完全离线可编
+    
     compileOptions {
         encoding "UTF-8"
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,11 +43,11 @@ android {
 
     lint {
         abortOnError false
-        checkReleaseBuilds false          // release 变体不做 lintVital —— 离线环境拉不到 lint-gradle
+        checkReleaseBuilds false          
     }
 }
 
 dependencies {
-    // Xposed API 只参与编译，绝不打进 dex（运行期由框架提供真身）
+    
     compileOnly files('libs/api-82.jar')
 }

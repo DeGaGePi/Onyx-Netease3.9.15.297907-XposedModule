@@ -2,18 +2,18 @@ plugins {
     id 'com.android.application' version '7.3.1' apply false
 }
 
-// ════════════════════════════════════════════════════════════════════════
-//  构建产物一律出到 E:\NewUI-build\  —— 跟 NewDLL 的 E:\NewDLL-build 同一规矩
-//
-//  为什么：本机 C 盘只剩 5 GB（页面文件都撑不住，Gradle daemon 起不来），
-//  D 盘（= 桌面「C盘清理」）只放源码。所以 build 目录整个搬去 E 盘。
-//
-//  产出位置：
-//    E:\NewUI-build\NewUI\   —— 根工程
-//    E:\NewUI-build\app\     —— app 模块
-//      └ outputs\apk\{debug,release}\*.apk
-//    E:\NewUI-build\dist\    —— build_apk.bat 汇总的成品 APK
-// ════════════════════════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
+
+
+
+
 def ONYX_BUILD_ROOT = 'E:/NewUI-build'
 
 allprojects {

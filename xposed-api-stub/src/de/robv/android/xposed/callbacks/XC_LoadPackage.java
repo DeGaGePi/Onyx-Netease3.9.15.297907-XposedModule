@@ -2,9 +2,9 @@ package de.robv.android.xposed.callbacks;
 
 import android.content.pm.ApplicationInfo;
 
-/**
- * 编译期占位：运行期由框架提供真身。
- */
+ 
+
+
 public class XC_LoadPackage extends XCallback {
 
     public XC_LoadPackage() {}

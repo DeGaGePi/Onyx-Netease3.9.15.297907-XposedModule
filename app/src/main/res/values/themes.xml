@@ -1,5 +1,5 @@
 <resources>
-    <!-- 只依赖 android 原生主题，不引 androidx，保证离线可编 -->
+     
     <style name="Theme.OnyxClickGUI" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
